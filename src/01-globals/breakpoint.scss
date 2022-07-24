@@ -1,0 +1,74 @@
+//--------breakpoint vars---------
+
+$break-320: 320px;
+$break-479: 479px;
+$break-480: 480px;
+$break-767: 767px;
+$break-768: 768px;
+$break-1023: 1023px;
+$break-1024: 1024px;
+$break-1279: 1279px;
+$break-1280: 1280px;
+$break-1399: 1399px;
+$break-1400: 1400px;
+
+//-------breakpoint mixin--------
+
+@mixin breakpoint($point) {
+  @if $point == mobile {
+    @media screen and (max-width: $break-479) {
+      @content;
+    }
+  } @else if $point == tabletSmall {
+    @media screen and (min-width: $break-480) {
+      @content;
+    }
+  } @else if $point == mobileMedium {
+    @media screen and (max-width: $break-767) {
+      @content;
+    }
+  } @else if $point == tablet {
+    @media screen and (min-width: $break-768) {
+      @content;
+    }
+  } @else if $point == mobileLarge {
+    @media screen and (max-width: $break-1023) {
+      @content;
+    }
+  } @else if $point == desktop {
+    @media screen and (min-width: $break-1024) {
+      @content;
+    }
+  } @else if $point == desktopMedium {
+    @media screen and (min-width: $break-1280) {
+      @content;
+    }
+  } @else if $point == desktopLarge {
+    @media screen and (min-width: $break-1400) {
+      @content;
+    }
+  }
+
+  // min and max
+  @else if $point == ipad {
+    @media screen and (min-width: $break-768) and (max-width: $break-1023) {
+      @content;
+    }
+  } @else if $point == desktopSmallMedium {
+    @media screen and (min-width: $break-1024) and (max-width: $break-1279) {
+      @content;
+    }
+  } @else if $point == desktopMediumLarge {
+    @media screen and (min-width: $break-1280) and (max-width: $break-1399) {
+      @content;
+    }
+  }
+}
+
+/*USE*/
+/*
+header {
+    height: 100px;
+    @include breakpoint(tablet) { height: auto; }
+}
+*/
