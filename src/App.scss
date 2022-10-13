@@ -1,4 +1,3 @@
-@import "./01-globals/breakpoints.scss";
-@import "./01-globals/colors.scss";
-@import "./01-globals/typography.scss";
-@import "./01-globals/utility.scss";
+@import "./00-globals/globals.scss";
+
+@import "./01-typography/typography.scss";
